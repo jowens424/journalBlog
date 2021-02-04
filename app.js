@@ -48,13 +48,15 @@ res.redirect("/");
 app.get("/post/:postName", function(req, res){
   var requestedTitle = _.lowerCase(req.params.postName);
 
+
   posts.forEach(function(post){
     var storedTitle = _.lowerCase(post.title);
+    var storedContent = _.lowerCase(post.content);
 
-    if (storedTitle === requestedTitle) {
-      console.log("Match Found!");
-  } else {
-    console.log("Not a match");
+      if (storedTitle === requestedTitle) {
+        res.render("post", {
+          pageTitle: post.title,
+          pageContent: post.content});
   }
 });
 });
