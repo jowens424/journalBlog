@@ -9,7 +9,9 @@
   </head>
   <body>
     <h1> <%=pageTitle%> </h1>
-    <h6> <%=pageContent%> </h6>
+    <h6> <%=pageContent.substring(1, 100) + "..."%>
+    <a href="/post/post.title">Read More</a>
+  </h6>
   </body>
 </html>
 
